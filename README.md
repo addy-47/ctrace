@@ -57,20 +57,24 @@ Modern production codebases suffer from **deep call stacks**, **heavy abstractio
 
 ## 🏗️ Architecture Overview
 
-```mermaid
-graph TD
-    A[Source Repository] --> B[File Scanner]
-    B --> C[AST Parser<br/>(tree-sitter)]
-    C --> D[Symbol Indexer]
-    D --> E[Call Graph Core]
-    E --> F[Data Lineage<br/>Extractor]
-    F --> G[Flow Sorter]
-    G --> H[Output Renderer]
-    
-    H --> I[Plain Text]
-    H --> J[Markdown]
-    H --> K[JSON]
-    H --> L[Mermaid Diagrams]
+```
+Source Repository
+        ↓
+    File Scanner
+        ↓
+    AST Parser (tree-sitter)
+        ↓
+    Symbol Indexer
+        ↓
+    Call Graph Core
+        ↓
+    Data Lineage Extractor
+        ↓
+    Flow Sorter
+        ↓
+    Output Renderer
+        ↓
+    [Plain Text | Markdown | JSON | Diagrams]
 ```
 
 ## 📊 Performance Benchmarks
